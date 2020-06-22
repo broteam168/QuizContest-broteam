@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 19.375, 8.625" name="DataTracNghiem">
+  <DataContextMoniker Name="/DataTracNghiemDataContext" />
+  <nestedChildShapes>
+    <classShape Id="0a814818-6b30-45ed-bb27-48110eae42bc" absoluteBounds="3.75, 0.5, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/DataTracNghiemDataContext/ChuDe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a227056d-61fd-4eda-a02a-06daa16233a8" absoluteBounds="3.765, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6c031357-3468-40a1-8de8-d4391361bb13" absoluteBounds="3.25, 3.5, 2, 3.1170068359375">
+      <DataClassMoniker Name="/DataTracNghiemDataContext/CauHoi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ea5963fa-2a5d-4147-93fb-851c630010ce" absoluteBounds="3.2649999999999997, 3.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.5 : 1.69399251302083); (4.5 : 3.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataTracNghiemDataContext/ChuDe/ChuDe_CauHoi" />
+      <nodes>
+        <classShapeMoniker Id="0a814818-6b30-45ed-bb27-48110eae42bc" />
+        <classShapeMoniker Id="6c031357-3468-40a1-8de8-d4391361bb13" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="0c25e93b-53d0-4af2-beb5-d7bbb5660c19" absoluteBounds="7.5, 1.625, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DataTracNghiemDataContext/DeThi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3bd652a1-9c67-4bf0-863f-fe30a68a7f04" absoluteBounds="7.515, 2.085, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.75 : 1.0624995); (8.5 : 1.0624995); (8.5 : 1.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataTracNghiemDataContext/ChuDe/ChuDe_DeThi" />
+      <nodes>
+        <classShapeMoniker Id="0a814818-6b30-45ed-bb27-48110eae42bc" />
+        <classShapeMoniker Id="0c25e93b-53d0-4af2-beb5-d7bbb5660c19" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="3917f29b-081d-497a-bb93-cd53845cbcf9" absoluteBounds="17.125, 5.375, 2, 1.9631982421875">
+      <DataClassMoniker Name="/DataTracNghiemDataContext/taiKhoan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9b313530-540c-45f0-afe8-71f9eab7276a" absoluteBounds="17.14, 5.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="df27f62e-457a-4459-83bf-261a9664d81f" absoluteBounds="10.25, 2, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DataTracNghiemDataContext/BatDau" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e696d031-7956-49f6-8c14-4c94f42e12ce" absoluteBounds="10.265, 2.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(9.5 : 2.88544840494792); (10.25 : 2.88544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataTracNghiemDataContext/DeThi/DeThi_BatDau" />
+      <nodes>
+        <classShapeMoniker Id="0c25e93b-53d0-4af2-beb5-d7bbb5660c19" />
+        <classShapeMoniker Id="df27f62e-457a-4459-83bf-261a9664d81f" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="fa8104f0-a5c2-4531-86dc-5b73308fca4b" absoluteBounds="13.25, 1.625, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/DataTracNghiemDataContext/Khoi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ab353feb-1f5d-4656-95c8-b49a05cd7bce" absoluteBounds="13.265, 2.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c8afa9bb-4a0f-4e0e-b5ba-db7d1215a2dc" absoluteBounds="17.125, 2, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/DataTracNghiemDataContext/Nien_khoa" />
+      <nestedChildShapes>
+        <elementListCompartment Id="56d8534e-8bd8-432f-9f50-bff9d2c241b9" absoluteBounds="17.14, 2.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a4f5f2b4-1fcd-4bc9-84d9-5854b45d055d" absoluteBounds="10.375, 5.375, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DataTracNghiemDataContext/TaiKoan_H" />
+      <nestedChildShapes>
+        <elementListCompartment Id="02dc10f9-074d-42e8-afe9-bcfc9d12024a" absoluteBounds="10.39, 5.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(17.1259174557792 : 3.19399251302083); (16.75 : 3.56990996880008); (16.75 : 6.26044840494792); (12.375 : 6.26044840494792)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTracNghiemDataContext/Nien_khoa/Nien_khoa_TaiKoan_H" />
+      <nodes>
+        <classShapeMoniker Id="c8afa9bb-4a0f-4e0e-b5ba-db7d1215a2dc" />
+        <classShapeMoniker Id="a4f5f2b4-1fcd-4bc9-84d9-5854b45d055d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.25 : 2.81899251302083); (14.25 : 5.78647170247396); (12.375 : 5.78647170247396)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTracNghiemDataContext/Khoi/Khoi_TaiKoan_H" />
+      <nodes>
+        <classShapeMoniker Id="fa8104f0-a5c2-4531-86dc-5b73308fca4b" />
+        <classShapeMoniker Id="a4f5f2b4-1fcd-4bc9-84d9-5854b45d055d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(17.125 : 6.76567260742187); (12.375 : 6.76567260742187)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTracNghiemDataContext/taiKhoan/taiKhoan_TaiKoan_H" />
+      <nodes>
+        <classShapeMoniker Id="3917f29b-081d-497a-bb93-cd53845cbcf9" />
+        <classShapeMoniker Id="a4f5f2b4-1fcd-4bc9-84d9-5854b45d055d" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="122ac30d-00d6-4b2d-a20d-6c901e11f50d" absoluteBounds="6, 5.25, 2, 3.1170068359375">
+      <DataClassMoniker Name="/DataTracNghiemDataContext/De_H" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6dff33ff-498c-4231-a38a-8e4ad7290573" absoluteBounds="6.015, 5.71, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.75 : 4.35740397135417); (7.75 : 5.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTracNghiemDataContext/DeThi/DeThi_De_H" />
+      <nodes>
+        <classShapeMoniker Id="0c25e93b-53d0-4af2-beb5-d7bbb5660c19" />
+        <classShapeMoniker Id="122ac30d-00d6-4b2d-a20d-6c901e11f50d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.375 : 6.26044840494792); (8 : 6.26044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTracNghiemDataContext/TaiKoan_H/TaiKoan_H_De_H" />
+      <nodes>
+        <classShapeMoniker Id="a4f5f2b4-1fcd-4bc9-84d9-5854b45d055d" />
+        <classShapeMoniker Id="122ac30d-00d6-4b2d-a20d-6c901e11f50d" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

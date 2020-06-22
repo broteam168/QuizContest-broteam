@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TracNghiem" Class="DataTracNghiemDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-NE70A7B\SQLEXPRESS;Initial Catalog=TracNghiem;User ID=sa" SettingsObjectName="DoAnThiTracNghiem_Son.Properties.Settings" SettingsPropertyName="TracNghiemConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ChuDe" Member="ChuDes">
+    <Type Name="ChuDe">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ten_Chu_De" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Association Name="ChuDe_CauHoi" Member="CauHois" ThisKey="ID" OtherKey="Ma_Chu_De" Type="CauHoi" />
+      <Association Name="ChuDe_DeThi" Member="DeThis" ThisKey="ID" OtherKey="Ma_Chu_De" Type="DeThi" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CauHoi" Member="CauHois">
+    <Type Name="CauHoi">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ma_Chu_De" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tieu_De" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Noi_Dung" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Dap_An_A" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Dap_An_B" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Dap_An_C" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Dap_An_D" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Dap_An_Dung" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Cap_Do" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Nguoi_Tao" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Nguoi_Sua" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="ChuDe_CauHoi" Member="ChuDe" ThisKey="Ma_Chu_De" OtherKey="ID" Type="ChuDe" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DeThi" Member="DeThis">
+    <Type Name="DeThi">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tieu_De" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="Ma_Chu_De" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SL_De" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SL_TrungBinh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SL_Kho" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Thoi_Gian_Lam_Bai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Nguoi_Tao" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Ngay_Tao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Trang_Thai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="DeThi_BatDau" Member="BatDaus" ThisKey="id" OtherKey="Ma_DeThi" Type="BatDau" />
+      <Association Name="DeThi_De_H" Member="De_Hs" ThisKey="id" OtherKey="Ma_Chu_De" Type="De_H" />
+      <Association Name="ChuDe_DeThi" Member="ChuDe" ThisKey="Ma_Chu_De" OtherKey="ID" Type="ChuDe" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.taiKhoan" Member="taiKhoans">
+    <Type Name="taiKhoan">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="userName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="pass" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="phanQuyen" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="thongTin" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="taiKhoan_TaiKoan_H" Member="TaiKoan_Hs" ThisKey="id" OtherKey="id_TaiKhoan" Type="TaiKoan_H" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BatDau" Member="BatDaus">
+    <Type Name="BatDau">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ma_DeThi" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nguoi_Lam" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Thoi_Gian" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Nop_Bai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="DeThi_BatDau" Member="DeThi" ThisKey="Ma_DeThi" OtherKey="id" Type="DeThi" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Khoi" Member="Khois">
+    <Type Name="Khoi">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="khoi" Member="khoi1" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="Khoi_TaiKoan_H" Member="TaiKoan_Hs" ThisKey="id" OtherKey="id_khoi" Type="TaiKoan_H" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Nien_khoa" Member="Nien_khoas">
+    <Type Name="Nien_khoa">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nien_khoa" Member="nien_khoa1" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="Nien_khoa_TaiKoan_H" Member="TaiKoan_Hs" ThisKey="id" OtherKey="id_nien_khoa" Type="TaiKoan_H" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TaiKoan_HS" Member="TaiKoan_Hs">
+    <Type Name="TaiKoan_H">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_khoi" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_nien_khoa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_TaiKhoan" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="lop" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Association Name="TaiKoan_H_De_H" Member="De_Hs" ThisKey="id" OtherKey="id_Tai_Khoan_HS" Type="De_H" />
+      <Association Name="Nien_khoa_TaiKoan_H" Member="Nien_khoa" ThisKey="id_nien_khoa" OtherKey="id" Type="Nien_khoa" IsForeignKey="true" />
+      <Association Name="Khoi_TaiKoan_H" Member="Khoi" ThisKey="id_khoi" OtherKey="id" Type="Khoi" IsForeignKey="true" />
+      <Association Name="taiKhoan_TaiKoan_H" Member="taiKhoan" ThisKey="id_TaiKhoan" OtherKey="id" Type="taiKhoan" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.De_HS" Member="De_Hs">
+    <Type Name="De_H">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ma_Chu_De" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Noi_Dung" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Dap_An_A" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Dap_An_B" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Dap_An_C" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Dap_An_D" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Dap_An_Dung" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Dap_An_HS" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Nguoi_Lam" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Thoi_Gian" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="id_Tai_Khoan_HS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DeThi_De_H" Member="DeThi" ThisKey="Ma_Chu_De" OtherKey="id" Type="DeThi" IsForeignKey="true" />
+      <Association Name="TaiKoan_H_De_H" Member="TaiKoan_H" ThisKey="id_Tai_Khoan_HS" OtherKey="id" Type="TaiKoan_H" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
